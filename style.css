@@ -1,0 +1,5 @@
+.coffee:hover {
+    opacity: 60%;
+    text-decoration: underline;
+    color: #b5a89d;
+}

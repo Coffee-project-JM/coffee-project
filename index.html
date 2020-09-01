@@ -11,23 +11,33 @@
 
 </head>
 <body>
-    <h1>Coffee!</h1>
+<div class="container">
+    <h1 class="text-center col-12">Coffee!</h1>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>All</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input type="text" id="roastSearch" >
-        <input id="submit" type="submit" />
+    <div class="row">
+        <form class="row text-center">
+            <div class="col-12 col-md-5">
+                <label for="roast-selection">Roast Type</label>
+                <select id="roast-selection" class="col-12 col-md-6">
+                <option>All</option>
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-5">
+                <label for="roastSearch">Coffee Name</label>
+                <input type="text" placeholder="Coffee" id="roastSearch" class="col-12 col-md-6">
+            </div>
+            <input id="submit" type="submit" class="col-12 col-md-2"/>
+        </form>
+    </div>
+</div>
 
-    </form>
 
-
-        <div id="coffees"></div>
+<div class="container m-0 col-12 d-flex flex-direction-row">
+    <div id="coffees" class="row col-12"></div>
+</div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
