@@ -15,22 +15,11 @@
     <!--    Header    -->
         <h1 class="text-center">Coffee!</h1>
         <!--    Form/Nav    -->
-        <form class="row d-flex justify-content-center">
+        <form class="row d-flex justify-content-center col-12">
             <!--     Roast Type and Select       -->
-<!--            <div class="d-flex justify-content-center col-10 my-2">-->
-<!--                <label for="roast-selection" class="mx-3">Roast Type</label>-->
-<!--                <select id="roast-selection" class="">-->
-<!--                    <option>All</option>-->
-<!--                    <option>light</option>-->
-<!--                    <option>medium</option>-->
-<!--                    <option>dark</option>-->
-<!--                </select>-->
-<!--            </div>-->
-            <div class="input-group d-flex justify-content-center col-10 col-md-4 my-2">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="roast-selection">Roast Type</label>
-                </div>
-                <select class="custom-select" id="roast-selection">
+            <div class="input-group d-flex justify-content-center col-12 col-md-6 col-lg-5 my-2">
+                <label class="col-md-6 col-lg-5 d-flex justify-content-center" for="roast-selection">Roast Type</label>
+                <select class="col-md-6 col-lg-7" id="roast-selection">
                     <option selected>All</option>
                     <option>light</option>
                     <option>medium</option>
@@ -38,12 +27,12 @@
                 </select>
             </div>
             <!--     Coffee Name and Text Input       -->
-            <div class="d-flex justify-content-center col-12 col-md-4 my-2">
-                <label for="roastSearch" class="mx-3">Coffee Name</label>
-                <input type="text" placeholder="Search" id="roastSearch" class="">
+            <div class=" col-12 col-md-6 text-center row col-lg-5 my-2">
+                <label for="roastSearch" class="col-12 col-md-6 col-lg-5">Coffee Name</label>
+                <input type="text" placeholder="Search" id="roastSearch" class="col-8 col-md-6 col-lg-7 mx-auto">
             </div>
             <!--      Submit Button      -->
-            <div class="d-flex justify-content-around col-10 col-md-4">
+            <div class="d-flex justify-content-around col-10 col-md-12 col-lg-2">
                 <input id="submit" type="submit" class="btn btn-outline-primary"/>
             </div>
         </form>
