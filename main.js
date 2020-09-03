@@ -35,12 +35,12 @@ function updateCoffees(e) {
 
 function addCoffee(e) {
     e.preventDefault();
-    // var newRoastType = newRoast.value;
-    // var addedName = newName.value;
+    var newRoastType = newRoast.value;
+    var addedName = newName.value;
     var newCoffee = {
         id: coffees.length + 1,
-        name: newName.value,
-        roast: newRoast.value
+        name: addedName,
+        roast: newRoastType
     }
     return coffees.push(newCoffee);
 }
