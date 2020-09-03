@@ -1,29 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Coffee Project JM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Your custom css styles go here -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Krona+One&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <h1>Coffee!</h1>
+    <div class="container">
+    <!--    Header    -->
+        <h1 class="text-center">Coffee!</h1>
+        <!--    Form/Nav    -->
+        <form class="row d-flex justify-content-center col-12">
+            <!--     Roast Type and Select       -->
+            <div class="input-group d-flex justify-content-center col-12 col-md-6 col-lg-5 my-2">
+                <label class="col-md-6 col-lg-5 d-flex justify-content-center" for="roast-selection">Roast Type</label>
+                <select class="col-md-6 col-lg-7" id="roast-selection">
+                    <option selected>All</option>
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+            </div>
+            <!--     Coffee Name and Text Input       -->
+            <div class=" col-12 col-md-6 text-center row col-lg-5 my-2">
+                <label for="roastSearch" class="col-12 col-md-6 col-lg-5">Coffee Name</label>
+                <input type="text" placeholder="Search" id="roastSearch" class="col-8 col-md-6 col-lg-7 mx-auto">
+            </div>
+            <!--      Submit Button      -->
+            <div class="d-flex justify-content-around col-10 col-md-12 col-lg-2">
+                <input id="submit" type="submit" class="btn btn-outline-primary"/>
+            </div>
+        </form>
+        <!--   add coffee     -->
+        <h2 class="text-center mt-2">Add Coffee</h2>
+        <form class="row d-flex justify-content-center col-12">
+            <div class="input-group d-flex justify-content-center col-12 col-md-6 col-lg-5 my-2">
+                <label class="col-md-6 col-lg-5 d-flex justify-content-center" for="roast-selection-add">Roast Type</label>
+                <select class="col-md-6 col-lg-7" id="roast-selection-add">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+            </div>
+            <!--     Coffee Name and Text Input       -->
+            <div class=" col-12 col-md-6 text-center row col-lg-5 my-2">
+                <label for="coffee-add" class="col-12 col-md-6 col-lg-5">Name</label>
+                <input type="text" placeholder="Add" id="coffee-add" class="col-8 col-md-6 col-lg-7 mx-auto">
+            </div>
+            <!--      Submit Button      -->
+            <div class="d-flex justify-content-around col-10 col-md-12 col-lg-2">
+                <input id="submit-new" type="submit" class="btn btn-outline-primary"/>
+            </div>
+        </form>
+        <!--  HR  -->
+        <hr>
+        <!-- Coffee Info Display -->
+            <div id="coffees" class="row"></div>
+        <hr>
+        </div>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>All</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input type="text" id="roastSearch" >
-        <input id="submit" type="submit" />
 
-    </form>
-
-
-        <div id="coffees"></div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
 </html>

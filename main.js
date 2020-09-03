@@ -1,17 +1,8 @@
 "use strict"
 
-// function renderCoffee(coffee) {
-//     var html = '<tr class="coffee">';
-//     html += '<td>' + coffee.id + '</td>';
-//     html += '<td>' + coffee.name + '</td>';
-//     html += '<td>' + coffee.roast + '</td>';
-//     html += '</tr>';
-//
-//     return html;
-// }
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
+    var html = '<div class="coffee col-sm-6 col-md-3 text-center ' + coffee.roast + '">';
     html += '<h3>' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
@@ -43,6 +34,32 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+function addCoffee(e) {
+    e.preventDefault();
+    var newRoastType = newRoast.value;
+    var addedName = newName.value;
+    var newCoffee = {
+        id: coffees.length + 1,
+        name: addedName,
+        roast: newRoastType
+    }
+    return coffees.push(newCoffee);
+}
+
+// function addAndUpdate() {
+//     addCoffee();
+//     updateCoffees();
+// }
+
+// console.log(coffees);
+// coffees.push ({
+//     id: coffees.length + 1,
+//     name: 'test',
+//     roast: 'light'
+// });
+// console.log(coffees);
+
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -64,7 +81,10 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var roastSearch = document.querySelector('#roastSearch')
+var roastSearch = document.querySelector('#roastSearch');
+var newRoast = document.querySelector('#roast-selection-add');
+var newName = document.querySelector('#coffee-add');
+var newCoffeeSubmit = document.querySelector('#submit-new');
 
 tbody.innerHTML = renderCoffees(coffees);
 
@@ -73,3 +93,6 @@ submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 
 roastSearch.addEventListener('input', updateCoffees);
+
+newCoffeeSubmit.addEventListener('click', addCoffee);
+newCoffeeSubmit.addEventListener('click', updateCoffees);
