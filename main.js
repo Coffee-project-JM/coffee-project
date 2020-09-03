@@ -15,9 +15,19 @@ function renderCoffees(coffees) {
     for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
+    if (localStorage.getItem('localCoffee') != null) {
+        for(var i = 0; i < JSON.parse(localStorage.getItem("localCoffee")).length; i++) {
+            html += renderCoffee(JSON.parse(localStorage.getItem("localCoffee"))[i]);
+        }
+    }
     return html;
 }
 
+// function renderNewCoffees(coffees) {
+//     var html = '';
+//
+//     return html;
+// }
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
@@ -34,7 +44,20 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
+// var storageCoffee = [];
+// storageCoffee = checkLocalStorage(storageCoffee);
+// function checkLocalStorage(storageCoffee) {
+//     var localStorageTest = localStorage.getItem('localCoffee');
+//     if (localStorageTest === null) {
+//         storageCoffee = [];
+//     } else {
+//         storageCoffee = JSON.parse(localStorage.getItem('localCoffee'));
+//     }
+//
+//     localStorage.setItem('localCoffee', JSON.stringify(storageCoffee));
+//
+//     return storageCoffee;
+// }
 
 function addCoffee(e) {
     e.preventDefault();
@@ -42,8 +65,7 @@ function addCoffee(e) {
     var addedName = newName.value;
 
     var localStorageTest = localStorage.getItem('localCoffee');
-
-    var storageCoffee = []
+    var storageCoffee = [];
     if (localStorageTest === null) {
         storageCoffee = [];
     } else {
@@ -54,18 +76,13 @@ function addCoffee(e) {
         id: storageCoffee.length + 15,
         name: addedName,
         roast: newRoastType
-    }
+    };
 
+    storageCoffee.push(newCoffee);
 
+    localStorage.setItem('localCoffee', JSON.stringify(storageCoffee));
 
-
-    storageCoffee.push(newCoffee)
-
-    localStorage.setItem('localCoffee', JSON.stringify(storageCoffee))
-
-    return coffees.push(newCoffee);
-
-
+    // return coffees.push(newCoffee);
 }
 
 
@@ -89,6 +106,7 @@ var coffees = [
 ];
 
 var tbody = document.querySelector('#coffees');
+var tbody2 = document.querySelector('#localCoffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 var roastSearch = document.querySelector('#roastSearch');
@@ -97,6 +115,7 @@ var newName = document.querySelector('#coffee-add');
 var newCoffeeSubmit = document.querySelector('#submit-new');
 
 tbody.innerHTML = renderCoffees(coffees);
+// tbody2.innerHTML = renderNewCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
