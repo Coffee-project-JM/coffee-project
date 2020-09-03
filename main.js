@@ -41,15 +41,6 @@ function addCoffee(e) {
     var newRoastType = newRoast.value;
     var addedName = newName.value;
 
-    var newCoffee = {
-        id: coffees.length + 1,
-        name: addedName,
-        roast: newRoastType
-    }
-
-
-
-
     var localStorageTest = localStorage.getItem('localCoffee');
 
     var storageCoffee = []
@@ -58,6 +49,14 @@ function addCoffee(e) {
     } else {
         storageCoffee = JSON.parse(localStorage.getItem('localCoffee'))
     }
+
+    var newCoffee = {
+        id: storageCoffee.length + 15,
+        name: addedName,
+        roast: newRoastType
+    }
+
+
 
 
     storageCoffee.push(newCoffee)
