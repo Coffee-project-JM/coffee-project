@@ -33,6 +33,8 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+var newCoffeeArray = JSON.parse(localStorage.getItem('addedCoffeeArray',))
+
 function addCoffee(e) {
     e.preventDefault();
     var newRoastType = newRoast.value;
@@ -42,21 +44,20 @@ function addCoffee(e) {
         name: addedName,
         roast: newRoastType
     }
+
+
+    localStorage.setItem("newCoffee", JSON.stringify(newCoffee));
+
+    console.log(localStorage)
+
     return coffees.push(newCoffee);
 }
 
-// function addAndUpdate() {
-//     addCoffee();
-//     updateCoffees();
-// }
 
-// console.log(coffees);
-// coffees.push ({
-//     id: coffees.length + 1,
-//     name: 'test',
-//     roast: 'light'
-// });
-// console.log(coffees);
+
+
+
+var retrievedObject = localStorage.getItem('newCoffee');
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
