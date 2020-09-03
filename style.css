@@ -81,3 +81,8 @@ p {
     background-image: url("img/DarkCoffeeBeans.jpg");
     background-size: cover;
 }
+
+
+#add-btn {
+    color: #D1D0D0;
+}
